@@ -10,11 +10,11 @@
 <body>
   <?php include('./header.php') ?>
   <div class="submitImage">
-    <form action="../postImage.php" method="post" enctype="multipart/form-data">
-      <img id="preview">
-      <input type="file" name="file" onchange="previewFile(this);">
-      <button type="submit" name="submit">送信</button>
-    </form>
+      <form action="../postImage.php" method="post" enctype="multipart/form-data">
+        <img id="preview">
+        <input type="file" name="file" onchange="previewFile(this);">
+        <button type="submit" name="submit">送信</button>
+      </form>
     <button onclick="location.href='./index.php';" class="backButton">戻る</button>
   </div>
 </body>

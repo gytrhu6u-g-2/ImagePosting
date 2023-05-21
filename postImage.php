@@ -3,8 +3,15 @@
 include('./dbConfig.php');
 
 $targetDirectory = 'images/';      // 5-7行目でファイルパスの指定
-$fileName = basename($_FILES["file"]["name"]);
+if (isset($_FILES['file']['name'])) {
+    $fileName = basename($_FILES['file']['name']);
+    var_dump("できてるよ");
+}else {
+    var_dump("できてないよ");
+    return false;
+}
 $targetFilePath = $targetDirectory . $fileName;
+var_dump($fileName);
 var_dump($targetFilePath);
 $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);  //PATHINFO_EXTENSIONで拡張子を取得
 
