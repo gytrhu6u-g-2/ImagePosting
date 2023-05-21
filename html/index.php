@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
     <title>画像投稿アプリ</title>
 </head>
 <body>
+    <?php include('../dbConfig.php') ?>
     <?php include('./header.php') ?>
     <div class="imageList">
+        <div class="imageList">
         <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
         <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
         <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
@@ -20,6 +21,5 @@
         <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
         <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
     </div>
-
 </body>
 </html>
