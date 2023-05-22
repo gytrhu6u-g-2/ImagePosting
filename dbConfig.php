@@ -1,6 +1,6 @@
 <?php
 // DB接続ファイル
-    $dbName = 'mysql:host=localhost;dbname=imagePosting;charset=utf8';
+    $dbName = 'mysql:host=localhost;dbname=imageposting;charset=utf8';
     $userName = 'root';
 
     try {
