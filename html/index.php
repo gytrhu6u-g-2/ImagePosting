@@ -9,17 +9,12 @@
 </head>
 <body>
   <?php include('../dbConfig.php') ?>
+  <?php include('../getDatas.php') ?>
   <?php include('./header.php') ?>
   <div class="imageList">
-    <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
-    <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
-    <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
-    <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
-    <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
-    <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
-    <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
-    <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
-    <a href="./imageDetail.php"><img src="../気球.jpeg" alt="投稿画像"></a>
+    <?php foreach($data as $image) { ?>
+      <a href="./imageDetail.php?id=<?php echo $image['id']; ?>"><img src="../images/<?php echo $image['file_name']; ?>" alt="画像投稿"></a>
+    <?php }; ?>
 </div>
 </body>
 </html>
