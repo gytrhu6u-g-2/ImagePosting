@@ -9,8 +9,7 @@ if (isset($_FILES['file']['name'])) {
     return false;
 }
 $targetFilePath = $targetDirectory . $fileName;
-$fileType = pathinfo($targetFilePath, PATHls
-INFO_EXTENSION);  //PATHINFO_EXTENSIONで拡張子（jpgなど）を取得
+$fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);  //PATHINFO_EXTENSIONで拡張子（jpgなど）を取得
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($fileName)) {     // POSTメソッドのリクエストに対する処理を行う
     $arrImageTypes = array('jpg', 'png', 'jpeg', 'gif', 'pdf');
