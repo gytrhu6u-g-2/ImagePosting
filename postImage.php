@@ -5,17 +5,14 @@ include('./dbConfig.php');
 $targetDirectory = 'images/';      // 5-7行目でファイルパスの指定
 if (isset($_FILES['file']['name'])) {
     $fileName = basename($_FILES['file']['name']);
-    var_dump("できてるよ");
 }else {
-    var_dump("できてないよ");
     return false;
 }
 $targetFilePath = $targetDirectory . $fileName;
-var_dump($fileName);
-var_dump($targetFilePath);
-$fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);  //PATHINFO_EXTENSIONで拡張子を取得
+$fileType = pathinfo($targetFilePath, PATHls
+INFO_EXTENSION);  //PATHINFO_EXTENSIONで拡張子（jpgなど）を取得
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($fileName)) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($fileName)) {     // POSTメソッドのリクエストに対する処理を行う
     $arrImageTypes = array('jpg', 'png', 'jpeg', 'gif', 'pdf');
     if (in_array($fileType, $arrImageTypes)) {
         $postImageForServer = move_uploaded_file($_FILES['file']['tmp_name'], $targetFilePath);     //第二引数は保存先
